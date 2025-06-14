@@ -1,1 +1,1 @@
-A Simulator for the development of microbiome under antibiotic pressure
+Simulation of the microbiome development under antibiotic pressure
