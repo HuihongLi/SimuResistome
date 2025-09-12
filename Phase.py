@@ -51,9 +51,9 @@ def resistant_fraction(Xs, Xr):
 # -----------------------------
 # Parameter sweep
 # -----------------------------
-FIT_COSTS = np.linspace(0, 1.5, 50)          # x
+FIT_COSTS = np.linspace(0, 1.3, 50)          # x
 SEL_PRESSURES = np.linspace(0.0, 1, 50)      # y
-CONVERSION_RATES = [0.0001, 0.08, 0.2, 0.5, 1.0]
+CONVERSION_RATES = [0, 0.08, 0.2, 0.5, 1.0]
 
 X, Y = np.meshgrid(FIT_COSTS, SEL_PRESSURES)
 
@@ -94,10 +94,9 @@ soft_cmap = ListedColormap(colors)
 # -----------------------------
 # Single 3D plot
 # -----------------------------
-fig = plt.figure(figsize=(9, 7))
+fig = plt.figure(figsize=(12, 12))
 ax = fig.add_subplot(111, projection='3d')
-
-alpha_val = 0.55  # translucency
+alpha_val = 0.3  # translucency
 
 for cr, Z in Z_list:
     # Facecolors from z with soft colormap and transparency
@@ -123,6 +122,6 @@ ax.set_ylabel("Selective pressure factor")
 ax.set_zlabel("Resistant population fraction")
 
 fig.tight_layout()
-fig.savefig("R_prop_surfaces_all_in_one.png", dpi=220, bbox_inches="tight")
+fig.savefig("TaxaPhase.png", dpi=220, bbox_inches="tight")
 plt.show()
 
